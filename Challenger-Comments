@@ -20,3 +20,5 @@ object reference directly in my Compensation class. I tried to have an object re
 what I tried in comment blocks. Didn't get @DBRef to work for example. I ended up just using id strings. 
 Ironically one thing I had a bit embarassingly long time of trying to fix was the testing. It was relatively straightforward once I got past the configuration hurdles. I did hardcode some of the IDs since some of the tests rely on extant test-data. I might need to find 
 a better solution (like adding that test data in the @BeforeAll), but for this it works. Didn't need any mockito either.
+
+Also, I made sure not to change the dependencies. I was operating under the assumption that this was a project I would be working on with others so I didn't want to upend what it was built upon. I did use an older version of Java to be compatible with the Gradle version provided.
