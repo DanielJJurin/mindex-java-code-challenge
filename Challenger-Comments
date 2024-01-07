@@ -1,0 +1,16 @@
+Code challenge Log
+
+So, first thing I had to do was get this running and compatible. I'm admittedly more used to working with Maven than Gradle, still, it wasn't that hard to get working once I figured out that I needed to downgrade my Java version and download it to work with the Gradle provided in the project.
+I usually used H2 SQL for database work so working with MongoDB was new, although not difficult to adjust to. 
+
+Once in, I got a feel for what was there. I did want to make sure I was properly familiar. 
+
+Part 1 was pretty straightforward. I had thought about architectures and wondered if I should have just created an endpoint on the Controller/Service classes to derive what was needed from the Employee data directly without creating a new class type for it. I probably could have done it this way but the specifications seemed to indicate that I should have made a new class. I did weigh the pros and cons of each design, but I decided to stick to the specifications. 
+Implementing was pretty straightforward. 
+One thing I wasn't exactly sure of is if it was expected to have an employee in the ReportingStructure class or just a string ID. Since it's essentially a derived field, I could see a case for each, but the instructions seemed to indicate for display it just wanted the ID and not all of the data that goes with the Employee. So I kept it simple, even if the Java class is a bit awkward and open to dirty data. As long as the class isn't accessed improperly it won't be a problem, at least.
+ReportingStructure didn't need a Repository interface due to it's fully derived nature and lack of need to be persisted
+
+All in all though, Part 1 was pretty simple.
+
+Part 2 got a bit more complicated. Main thing is I'm used to setting up entities for SpringDataJPA, rather than how it's set up here for MongoDB. It took me a bit of time to make the appropriate adjustments, especially object dependencies. In the end I didn't have an object reference directly in my Compensation class. I tried to have an object reference but it always included all of the data directly in the MongoDB JSON, which I did not want because it would open a lot of database consistency issues. 
+Ironically one thing I had a bit embarassingly long time of trying to fix was the testing. It was relatively straightforward once I got past the configuration hurdles. I did hardcode some of the IDs since some of the tests rely on extant test-data. I might need to find a better solution (like adding that test data in the @BeforeAll), but for this it works. Didn't need any mockito either.
