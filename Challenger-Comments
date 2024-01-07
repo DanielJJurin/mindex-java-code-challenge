@@ -1,8 +1,8 @@
 Code challenge Log
 
 So, first thing I had to do was get this running and compatible. I'm admittedly more used to working with Maven than Gradle, still, it wasn't that hard to get working once I figured out that I needed to downgrade my Java version and download it to work with the Gradle 
-provided in the project.
-I usually used H2 SQL for database work so working with MongoDB was new, although not difficult to adjust to. 
+provided in the project. I opted not to edit the Gradle dependencies, I figured I was simulating a project others were working on so I didn't want to undermine it by putting together a different set of dependencies. 
+I usually used H2 SQL for database work so working with MongoDB was new, although not too difficult to adjust to. My solutions might not have been optimal but I tried to optimize from a database perspective over a Java one. 
 
 Once in, I got a feel for what was there. I did want to make sure I was properly familiar. 
 
@@ -20,5 +20,3 @@ object reference directly in my Compensation class. I tried to have an object re
 what I tried in comment blocks. Didn't get @DBRef to work for example. I ended up just using id strings. 
 Ironically one thing I had a bit embarassingly long time of trying to fix was the testing. It was relatively straightforward once I got past the configuration hurdles. I did hardcode some of the IDs since some of the tests rely on extant test-data. I might need to find 
 a better solution (like adding that test data in the @BeforeAll), but for this it works. Didn't need any mockito either.
-
-Also, I made sure not to change the dependencies. I was operating under the assumption that this was a project I would be working on with others so I didn't want to upend what it was built upon. I did use an older version of Java to be compatible with the Gradle version provided.
