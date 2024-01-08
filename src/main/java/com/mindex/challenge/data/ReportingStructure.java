@@ -8,9 +8,6 @@ package com.mindex.challenge.data;
 */
 public class ReportingStructure {
 
-//	@DBRef
-//	private Employee employee;
-//	
 	private String employeeId;
     private int numberOfReports;
     public ReportingStructure() {
@@ -42,28 +39,5 @@ public class ReportingStructure {
 	public void setNumberOfReports(int numberOfReports) {
 		this.numberOfReports = numberOfReports;
 	}
-
-//    public ReportingStructure(Employee emp) {
-//    	this.employee = emp;
-//    	if (emp.getDirectReports() == null) {
-//    		this.numberOfReports = 0;
-//    	} else {
-//    		this.numberOfReports = emp.getDirectReports().size();
-//    	}
-//    }
-//    
-//	public Employee getEmployee() {
-//		return employee;
-//	}
-//	public void setEmployee(Employee emp) {
-//		this.employee = emp;
-//	}
-//	public int getNumberOfReports() {
-//		return numberOfReports;
-//	}
-//	public void setNumberOfReports(int numberOfReports) {
-//		this.numberOfReports = numberOfReports;
-//	}
-//
     
 }
